@@ -2,6 +2,12 @@
 
 A Claude skill that runs a structured, mock-interview-style daily prep session for a security engineering role. Claude plays the interviewer — asking, probing, and correcting — while the candidate drives every answer.
 
+## Recent changes
+
+- **Two modes per drill round.** The security-fundamentals drill now offers rapid-fire (10 questions, broad coverage) or deep-dive (5 topics, each with 2-3 follow-ups probing the mechanics further). The Python-basics drill now offers rapid-fire (10 conceptual Q&A) or hands-on (5 small code challenges — fill-in-the-blank or "implement this" — instead of pure recall). Claude asks which mode you want at the start of every drill round, every time.
+- **Study sessions.** After the 4 main rounds, Claude offers an optional study session on a topic you struggled with that day, or any topic of your choosing (security topics only, for now). Unlike the rest of the session, this isn't Socratic or interview-framed — the candidate drives entirely, asking as many questions as they want, with Claude supporting via recaps, explanations, and hands-on practice (code review, quizzes, etc.). Claude is required to stick to factually correct answers and cite sources during these sessions. Study sessions are never logged to the vault or memory.
+- **No more company-specific tailoring.** The skill previously leaned on an active-interview-process context (loop structure, JD emphasis) stored in memory to steer scenario/problem choices. That's been removed — the skill now runs general security engineering prep by default, and would only re-tailor itself if that context is reintroduced later.
+
 ## What it does
 
 Each session runs four rounds, in a standing default order:
